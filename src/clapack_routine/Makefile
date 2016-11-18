@@ -1,0 +1,70 @@
+DOBJECTS = \
+	 s_cat.o \
+	 s_copy.o \
+	 s_cmp.o \
+	 pow_di.o \
+	 i_nint.o \
+	 dorgbr.o \
+	 dbdsqr.o \
+	 dgeqrf.o \
+	 dlabrd.o \
+	 dlacpy.o \
+	 dlange.o \
+	 dlarf.o \
+	 dlarfb.o \
+	 dlarfg.o \
+	 dlarfp.o \
+	 dlarft.o \
+	 dlascl.o \
+	 dlaset.o \
+	 dorglq.o \
+	 dorgqr.o \
+	 dgebd2.o \
+	 dgebrd.o \
+	 dgelq2.o \
+	 dgelqf.o \
+	 dgemm.o \
+	 dgemv.o \
+	 dger.o \
+	 dgesvd.o \
+	 dlamch.o \
+	 dorm2l.o \
+	 dormbr.o \
+	 dorm2r.o \
+	 dormql.o \
+	 dormlq.o \
+	 dorml2.o \
+	 dormqr.o \
+         dposv.o \
+	 dpotrf.o\
+	 dpotrs.o\
+         dpotf2.o\
+	 ddot.o\
+	 dsyrk.o\
+	 dtrsm.o\
+	 ieeeck.o \
+	 iladlc.o \
+	 ilaenv.o \
+	 iparmq.o \
+	 lsame.o \
+	 xerbla.o \
+	 dlasr.o \
+	 sfe.o open.o dlas2.o dlapy2.o disnan.o dlassq.o dgeqr2.o dlasq1.o dlasq2.o dlasq3.o \
+	 dlasq4.o dlasq5.o dlasq6.o dlartg.o dlasrt.o iladlr.o dorgl2.o dlaisnan.o dlasv2.o \
+	 dorg2r.o pow_dd.o d_sign.o fmt.o err.o sig_die.o close.o exit_.o endfile.o wsfe.o \
+	 wrtfmt.o wref.o util.o ctype.o fmtlib.o f77_aloc.o \
+	 dswap.o dnrm2.o dtrmm.o dtrmv.o dcopy.o dscal.o drot.o
+
+CFLAGS = -w
+
+all: $(DOBJECTS)
+
+test: $(DOBJECTS) test.o
+	$(CC) $(CFLAGS) $(DOBJECTS) test.o -o test -lm 
+
+clean:
+	rm -f *.o
+
+.c.o: 
+	$(CC) $(CFLAGS) -c $<
+
